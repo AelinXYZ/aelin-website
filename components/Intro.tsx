@@ -62,6 +62,7 @@ const IntroBackgroundContainer = styled.div`
   left: 0;
   height: 674px;
   z-index: 0;
+  pointer-events: none;
 `;
 
 const BackgroundGradient = styled.div``;
