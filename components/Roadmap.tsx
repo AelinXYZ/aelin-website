@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { roadmap, RoadmapType } from '../data/roadmap';
+import { roadmap } from '../data/roadmap';
 
 const Roadmap = () => {
   return (
