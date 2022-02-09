@@ -1,4 +1,4 @@
-export type Roadmap = {
+export type RoadmapType = {
   month: string;
   isActive: boolean;
   version: {
@@ -8,7 +8,7 @@ export type Roadmap = {
   id: number;
 }[];
 
-export const roadmap: Roadmap = [
+export const roadmap: RoadmapType = [
   {
     month: 'Sept 2021',
     isActive: false,
