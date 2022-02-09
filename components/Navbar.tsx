@@ -31,9 +31,9 @@ const Button = styled.button`
   border: none;
   padding: 0;
   font: inherit;
-  cursor: pointer;
   outline: inherit;
   font-size: 18px;
+  cursor: pointer;
 `;
 
 const NavCallToActionButton = styled.button`
