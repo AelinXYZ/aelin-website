@@ -15,8 +15,46 @@ const Roadmap = () => {
           {roadmap.map(({ month, isActive, version, id }) => (
             <ReleaseWrapper key={id}>
               <Title>{month}</Title>
+              <BarWrapper>
+                <Puce>
+                  <MainCircle
+                    style={{
+                      background:
+                        isActive === 'active' || isActive === 'previous'
+                          ? '#a4f3ff'
+                          : '#FFF',
+                    }}
+                  />
+                  <MiddleCircle
+                    style={{
+                      background:
+                        isActive === 'active' || isActive === 'previous'
+                          ? 'rgba(164, 243, 255, 0.4)'
+                          : 'rgba(255, 255, 255, 0.4)',
+                    }}
+                  />
+                  <BigCircle
+                    style={{
+                      background:
+                        isActive === 'active' || isActive === 'previous'
+                          ? 'rgba(164, 243, 255, 0.2)'
+                          : 'rgba(255, 255, 255, 0.2)',
+                    }}
+                  />
+                </Puce>
+                <Bar
+                  style={{
+                    background:
+                      isActive === 'previous' || isActive === 'active'
+                        ? '#a4f3ff'
+                        : 'linear-gradient(270deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 48.44%)',
+                  }}
+                />
+              </BarWrapper>
               <VersionWrapper
-                style={{ outline: isActive ? '2px solid #A4F3FF' : '' }}
+                style={{
+                  outline: isActive === 'active' ? '2px solid #A4F3FF' : '',
+                }}
               >
                 <VersionTitle>{version.title}</VersionTitle>
                 {version.bullets.map((b, i) => (
@@ -30,6 +68,60 @@ const Roadmap = () => {
     </div>
   );
 };
+
+const BarWrapper = styled.div`
+  position: relative;
+`;
+
+const Puce = styled.div`
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 12px 0px;
+`;
+
+const Bar = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 299px;
+  height: 6px;
+  z-index: 30;
+`;
+
+const MainCircle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  border-radius: 50%;
+`;
+const MiddleCircle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+
+  z-index: 20;
+  border-radius: 50%;
+`;
+const BigCircle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+  border-radius: 50%;
+`;
 
 const ContentContainer = styled.div`
   width: 100%;

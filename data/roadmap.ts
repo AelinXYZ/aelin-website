@@ -1,6 +1,6 @@
 export type RoadmapType = {
   month: string;
-  isActive: boolean;
+  isActive: 'previous' | 'active' | 'upcoming';
   version: {
     title: string;
     bullets: string[];
@@ -11,7 +11,7 @@ export type RoadmapType = {
 export const roadmap: RoadmapType = [
   {
     month: 'Sept 2021',
-    isActive: false,
+    isActive: 'previous',
     version: {
       title: 'V.1',
       bullets: [
@@ -24,7 +24,7 @@ export const roadmap: RoadmapType = [
   },
   {
     month: 'Feb 2022',
-    isActive: true,
+    isActive: 'active',
     version: {
       title: 'V1.1',
       bullets: [
@@ -37,7 +37,7 @@ export const roadmap: RoadmapType = [
   },
   {
     month: 'May 2022',
-    isActive: false,
+    isActive: 'upcoming',
     version: {
       title: 'V2',
       bullets: [
@@ -50,7 +50,7 @@ export const roadmap: RoadmapType = [
   },
   {
     month: 'End 2022',
-    isActive: false,
+    isActive: 'upcoming',
     version: {
       title: 'V3',
       bullets: [
