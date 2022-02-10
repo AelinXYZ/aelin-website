@@ -41,7 +41,7 @@ const Roadmap = () => {
                           : 'rgba(255, 255, 255, 0.2)',
                     }}
                   />
-                </Puce>
+                      </Puce>   
                 <Bar
                   style={{
                     background:
@@ -135,7 +135,7 @@ const ContentContainer = styled.div`
 
 const H2 = styled.h2`
   height: 70px;
-  font-weight: 800;
+  font-family: "Agrandir-TextBold";
   font-size: 36px;
   line-height: 47px;
   text-align: center;
@@ -175,8 +175,8 @@ const ReleaseWrapper = styled.div`
 const Title = styled.div`
   width: 109px;
   height: 60px;
-  font-weight: 800;
-  font-size: 16px;
+  font-family: "Agrandir-TextBold";
+  font-size: 18px;
   line-height: 21px;
   text-align: center;
   color: #ffffff;
@@ -201,7 +201,7 @@ const VersionWrapperActive = styled.div`
 `;
 const VersionTitle = styled.div`
   font-style: normal;
-  font-weight: 800;
+  font-family: "Agrandir-TextBold";
   font-size: 24px;
   line-height: 31px;
   color: #ffffff;

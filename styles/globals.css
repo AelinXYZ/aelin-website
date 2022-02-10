@@ -25,6 +25,14 @@ a {
 }
 
 @font-face {
+  font-family: "Agrandir-TextBold";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../public/fonts/Agrandir-TextBold.otf") format("opentype");
+}
+
+@font-face {
   font-family: "Sometimes-Regular";
   font-style: normal;
   font-weight: 400;
