@@ -1,8 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const Navbar = () => {
+  const matchesMd = useMediaQuery('(min-width: 1020px)');
+
+  if (!matchesMd)
+    return (
+      <NavMobile>
+        <Image
+          src='/svg/text-logo.svg'
+          alt='Text logo'
+          width={120}
+          height={22}
+        />
+      </NavMobile>
+    );
   return (
     <Nav>
       <Image src='/svg/text-logo.svg' alt='Text logo' width={120} height={22} />
@@ -18,7 +32,14 @@ const Navbar = () => {
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding: 30px 40px;
+`;
+
+const NavMobile = styled.nav`
+  display: flex;
+  justify-content: center;
   width: 100%;
   align-items: center;
   padding: 30px 40px;
@@ -52,8 +73,6 @@ const NavCallToActionButton = styled.button`
   border: 1px solid #ffffff;
   box-sizing: border-box;
   backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 50px;
 `;
 
