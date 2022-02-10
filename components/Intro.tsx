@@ -78,9 +78,8 @@ const LogoWrapper = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-family: inherit;
+  font-family: "Agrandir-TextBold";
   font-style: normal;
-  font-weight: 800;
   font-size: 24px;
   line-height: 31px;
   display: flex;
