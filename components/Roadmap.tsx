@@ -134,7 +134,7 @@ const LongBar = styled.div`
   left: 50%;
   width: 1170px;
   height: 6px;
-  z-index: 30;
+  z-index: 5;
   background: linear-gradient(
     270deg,
     rgba(255, 255, 255, 0) 0%,
@@ -148,7 +148,7 @@ const Bar = styled.div`
   left: 50%;
   width: 299px;
   height: 6px;
-  z-index: 30;
+  z-index: 5;
 `;
 
 const MainCircle = styled.div`

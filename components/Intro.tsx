@@ -2,18 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 function Intro() {
   return (
     <IntroSection>
-      <IntroBackgroundContainer>
-        <Image
-          src='/svg/white-lines.svg'
-          alt='Background lines'
-          layout='fill'
-        />
-      </IntroBackgroundContainer>
-      <BackgroundGradient />
+      <LinesContainer />
       <Navbar />
       <ContentContainer>
         <MainLogoContainer>
@@ -55,17 +49,42 @@ const IntroSection = styled.div`
   width: 100%;
 `;
 
-const IntroBackgroundContainer = styled.div`
+const LinesContainer = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   height: 674px;
+  background-image: url('/svg/white-lines.svg');
+  background-position: center;
+  background-size: cover;
   z-index: 0;
   pointer-events: none;
 `;
 
-const BackgroundGradient = styled.div``;
+const BackgroundGradient = styled.div`
+  position: absolute;
+  width: 1014px;
+  height: 880px;
+  left: 212px;
+  top: -17px;
+  background: radial-gradient(
+    43.47% 57.22% at 50% 50%,
+    #a4f3ff 0%,
+    #a4f3ff 74.86%
+  );
+`;
+
+const BackgroundBoxShadow = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 729px;
+  top: 275px;
+
+  background: #34364e;
+  box-shadow: 0px 0px 250px 180px #ffffff;
+`;
 
 const MainLogoContainer = styled.div`
   display: flex;
@@ -78,7 +97,7 @@ const LogoWrapper = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-family: "Agrandir-TextBold";
+  font-family: 'Agrandir-TextBold';
   font-style: normal;
   font-size: 24px;
   line-height: 31px;
