@@ -4,16 +4,16 @@ import styled from 'styled-components';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 const Navbar = () => {
-  const matchesMd = useMediaQuery('(min-width: 1020px)');
+  const matchesMd = useMediaQuery('(max-width: 768px)');
 
-  if (!matchesMd)
+  if (matchesMd)
     return (
       <NavMobile>
         <Image
           src='/svg/text-logo.svg'
           alt='Text logo'
-          width={120}
-          height={22}
+          width={89}
+          height={15}
         />
       </NavMobile>
     );
@@ -34,7 +34,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  padding: 30px 40px;
+  padding: 40px 40px;
 `;
 
 const NavMobile = styled.nav`
@@ -42,7 +42,7 @@ const NavMobile = styled.nav`
   justify-content: center;
   width: 100%;
   align-items: center;
-  padding: 30px 40px;
+  padding: 40px 40px;
 `;
 
 const Button = styled.button`

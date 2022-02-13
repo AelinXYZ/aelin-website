@@ -3,8 +3,11 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { devices } from '../breakpoints';
 
 function Intro() {
+  const matchesMd = useMediaQuery('(max-width: 768px)');
+
   return (
     <IntroSection>
       <LinesContainer />
@@ -12,13 +15,18 @@ function Intro() {
       <ContentContainer>
         <MainLogoContainer>
           <LogoWrapper>
-            <Image src='/svg/logo.svg' alt='Logo' width={360} height={181} />
+            <Image
+              src='/svg/logo.svg'
+              alt='Logo'
+              width={matchesMd ? 194 : 360}
+              height={matchesMd ? 98 : 181}
+            />
           </LogoWrapper>
           <Image
             src='/svg/text-logo.svg'
             alt='Text logo'
-            width={358}
-            height={65}
+            width={matchesMd ? 194 : 358}
+            height={matchesMd ? 35 : 65}
           />
         </MainLogoContainer>
 
@@ -42,6 +50,10 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
+
+  @media ${devices.tablet} {
+    max-width: 300px;
+  }
 `;
 
 const IntroSection = styled.div`
@@ -90,15 +102,23 @@ const MainLogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+
+  @media ${devices.tablet} {
+    margin-bottom: 145px;
+  }
 `;
 
 const LogoWrapper = styled.div`
   margin-bottom: 40px;
+
+  @media ${devices.tablet} {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
 `;
 
 const H1 = styled.h1`
   font-family: 'Agrandir-TextBold';
-  font-style: normal;
   font-size: 24px;
   line-height: 31px;
   display: flex;
@@ -106,6 +126,12 @@ const H1 = styled.h1`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
+  @media ${devices.tablet} {
+    font-family: 'Agrandir-TextBold';
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 20px;
+  }
 `;
 const P = styled.p`
   font-style: normal;
@@ -115,6 +141,11 @@ const P = styled.p`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   height: 90px;
+  @media ${devices.tablet} {
+    font-size: 16px;
+    line-height: 21px;
+    height: 84px;
+  }
 `;
 
 const CallToActionBtn = styled.button`
@@ -131,6 +162,13 @@ const CallToActionBtn = styled.button`
   line-height: 21px;
   padding: 8px 0;
   margin: 40px 0 180px 0;
+  @media ${devices.tablet} {
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 40px 0 68px 0;
+  }
 `;
 
 export default Intro;
