@@ -38,24 +38,27 @@ const SponsorInvestorMobile = () => {
           Investor
         </RightTab>
       </Tabs>
-      {usersInfo.map(({ title, text, id, user }, index) => {
-        if (activeTab === user) {
-          return (
-            <InfoContainer key={id}>
-              <Puce>
-                {index === 0 && <Bar />}
-                <MainCircle />
-                <MiddleCircle />
-                <BigCircle />
-              </Puce>
-              <TextContainer>
-                <Title>{title}</Title>
-                <Text>{text}</Text>
-              </TextContainer>
-            </InfoContainer>
-          );
-        }
-      })}
+      <div style={{ position: 'relative' }}>
+        <Bar />
+
+        {usersInfo.map(({ title, text, id, user }, index) => {
+          if (activeTab === user) {
+            return (
+              <InfoContainer key={id}>
+                <Puce>
+                  <MainCircle />
+                  <MiddleCircle />
+                  <BigCircle />
+                </Puce>
+                <TextContainer>
+                  <Title>{title}</Title>
+                  <Text>{text}</Text>
+                </TextContainer>
+              </InfoContainer>
+            );
+          }
+        })}
+      </div>
       <CallToActionBtn>Learn more</CallToActionBtn>
     </ContentContainer>
   );
@@ -181,8 +184,8 @@ const BigCircle = styled.div`
 
 const Bar = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 20px;
+  left: 30px;
   margin-left: -3px;
 
   height: 600px;
@@ -191,7 +194,7 @@ const Bar = styled.div`
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 36.46%
+    rgba(255, 255, 255, 0.7) 70%
   );
 `;
 
