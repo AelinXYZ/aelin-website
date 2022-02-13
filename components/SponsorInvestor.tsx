@@ -98,8 +98,13 @@ const Bar = styled.div`
   width: 6px;
   top: 0;
 
-  // need to fix this color
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #ffffff 35.94%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 1) 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
 `;
 
 const InfoWrapper = styled.div`
