@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { roadmap } from '../data/roadmap';
+import { devices } from '../breakpoints';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const Roadmap = () => {
+  const matchesMd = useMediaQuery('(max-width: 768px)');
+
   return (
     <div>
       <ContentContainer>
@@ -15,48 +19,105 @@ const Roadmap = () => {
           {roadmap.map(({ month, isActive, version, id }, index) => {
             return (
               <ReleaseWrapper key={id}>
-                <Title>{month}</Title>
-                <BarWrapper>
-                  <Puce>
-                    <MainCircle
-                      style={{
-                        background:
-                          isActive === 'active' || isActive === 'previous'
-                            ? '#a4f3ff'
-                            : '#FFF',
-                      }}
-                    />
-                    <MiddleCircle
-                      style={{
-                        background:
-                          isActive === 'active' || isActive === 'previous'
-                            ? 'rgba(164, 243, 255, 0.4)'
-                            : 'rgba(255, 255, 255, 0.4)',
-                      }}
-                    />
-                    <BigCircle
-                      style={{
-                        background:
-                          isActive === 'active' || isActive === 'previous'
-                            ? 'rgba(164, 243, 255, 0.2)'
-                            : 'rgba(255, 255, 255, 0.2)',
-                      }}
-                    />
-                  </Puce>
-                  {index === 0 && (
-                    <>
-                      <Bar
-                        style={{
-                          background:
-                            isActive === 'previous' || isActive === 'active'
-                              ? '#a4f3ff'
-                              : 'linear-gradient(270deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 48.44%)',
-                        }}
-                      />
-                      <LongBar />
-                    </>
-                  )}
-                </BarWrapper>
+                {matchesMd ? (
+                  <div
+                    style={{
+                      position: 'relative',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginRight: '10px',
+                      width: '109px',
+                    }}
+                  >
+                    <Title>{month}</Title>
+                    <BarWrapper>
+                      <Puce>
+                        <MainCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? '#a4f3ff'
+                                : '#FFF',
+                          }}
+                        />
+                        <MiddleCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? 'rgba(164, 243, 255, 0.4)'
+                                : 'rgba(255, 255, 255, 0.4)',
+                          }}
+                        />
+                        <BigCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? 'rgba(164, 243, 255, 0.2)'
+                                : 'rgba(255, 255, 255, 0.2)',
+                          }}
+                        />
+                      </Puce>
+                      {index === 0 && (
+                        <>
+                          <Bar
+                            style={{
+                              background:
+                                isActive === 'previous' || isActive === 'active'
+                                  ? '#a4f3ff'
+                                  : 'linear-gradient(270deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 48.44%)',
+                            }}
+                          />
+                          <LongBar />
+                        </>
+                      )}
+                    </BarWrapper>
+                  </div>
+                ) : (
+                  <>
+                    <Title>{month}</Title>
+                    <BarWrapper>
+                      <Puce>
+                        <MainCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? '#a4f3ff'
+                                : '#FFF',
+                          }}
+                        />
+                        <MiddleCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? 'rgba(164, 243, 255, 0.4)'
+                                : 'rgba(255, 255, 255, 0.4)',
+                          }}
+                        />
+                        <BigCircle
+                          style={{
+                            background:
+                              isActive === 'active' || isActive === 'previous'
+                                ? 'rgba(164, 243, 255, 0.2)'
+                                : 'rgba(255, 255, 255, 0.2)',
+                          }}
+                        />
+                      </Puce>
+                      {index === 0 && (
+                        <>
+                          <Bar
+                            style={{
+                              background:
+                                isActive === 'previous' || isActive === 'active'
+                                  ? '#a4f3ff'
+                                  : 'linear-gradient(270deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 48.44%)',
+                            }}
+                          />
+                          <LongBar />
+                        </>
+                      )}
+                    </BarWrapper>
+                  </>
+                )}
                 <VersionWrapper
                   style={{
                     outline: isActive === 'active' ? '2px solid #A4F3FF' : '',
@@ -85,40 +146,82 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   z-index: 2;
   margin-bottom: 107px;
+  @media ${devices.tablet} {
+    max-width: 300px;
+    margin-bottom: 86px;
+  }
 `;
 
 const H2 = styled.h2`
-  height: 70px;
   font-family: 'Agrandir-TextBold';
+  height: 70px;
   font-size: 36px;
   line-height: 47px;
   text-align: center;
-  color: #ffffff;
   text-shadow: 0px 0px 6px rgba(80, 80, 80, 0.5);
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
+
+  @media ${devices.tablet} {
+    height: 100%;
+    font-size: 18px;
+    line-height: 23px;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+  }
 `;
 
 const P = styled.p`
   width: 840px;
   height: 90px;
-  font-weight: normal;
   font-size: 24px;
   line-height: 31px;
   text-align: center;
-  color: #ffffff;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
+  @media ${devices.tablet} {
+    height: 100%;
+    width: 300px;
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 56px;
+  }
 `;
 
 const TimelineWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
+`;
+
+const ReleaseWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 261px;
+  @media ${devices.tablet} {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    margin-bottom: 40px;
+  }
 `;
 
 const BarWrapper = styled.div`
   position: relative;
   margin-bottom: 41px;
+  @media ${devices.tablet} {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    margin-bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const Puce = styled.div`
@@ -126,13 +229,19 @@ const Puce = styled.div`
   width: 40px;
   height: 40px;
   margin: 12px 0px;
+  @media ${devices.tablet} {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const LongBar = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1170px;
+  // need to fix this width
+  width: 70vw;
   height: 6px;
   z-index: 5;
   background: linear-gradient(
@@ -140,6 +249,16 @@ const LongBar = styled.div`
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.5) 48.44%
   );
+  @media ${devices.tablet} {
+    width: 6px;
+    // Need to fix height and linear gradient
+    height: 1020px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 36.46%
+    );
+  }
 `;
 
 const Bar = styled.div`
@@ -149,6 +268,10 @@ const Bar = styled.div`
   width: 299px;
   height: 6px;
   z-index: 5;
+  @media ${devices.tablet} {
+    width: 6px;
+    height: 299px;
+  }
 `;
 
 const MainCircle = styled.div`
@@ -162,6 +285,8 @@ const MainCircle = styled.div`
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   z-index: 30;
   border-radius: 50%;
+  @media ${devices.tablet} {
+  }
 `;
 const MiddleCircle = styled.div`
   position: absolute;
@@ -185,26 +310,19 @@ const BigCircle = styled.div`
   border-radius: 50%;
 `;
 
-const ReleaseWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 261px;
-`;
-
-const Title = styled.div`
-  width: 109px;
+const Title = styled.span`
   height: 60px;
   font-family: 'Agrandir-TextBold';
   font-size: 18px;
   line-height: 21px;
   text-align: center;
-  color: #ffffff;
+  z-index: 50;
+  @media ${devices.tablet} {
+  }
 `;
 
 const VersionWrapper = styled.div`
-  width: 230px;
-  height: 184px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
@@ -212,7 +330,6 @@ const VersionWrapper = styled.div`
 `;
 
 const VersionTitle = styled.div`
-  font-style: normal;
   font-family: 'Agrandir-TextBold';
   font-size: 24px;
   line-height: 31px;
