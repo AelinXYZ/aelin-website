@@ -254,7 +254,7 @@ const LongBar = styled.div`
     // Need to fix height and linear gradient
     height: 1020px;
     background: linear-gradient(
-      270deg,
+      0deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0.5) 36.46%
     );
