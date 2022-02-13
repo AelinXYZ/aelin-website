@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
@@ -39,6 +40,15 @@ const SponsorInvestor = () => {
           );
         })}
       </div>
+      <CallToActionBtn>Learn more</CallToActionBtn>
+      <LogoWrapper>
+        <Image
+          src='/svg/gray-text-logo.svg'
+          alt='Logo'
+          width={358}
+          height={65}
+        />
+      </LogoWrapper>
     </ContentContainer>
   );
 };
@@ -52,6 +62,12 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
+  // this is a bit off
+  background: radial-gradient(
+    43.47% 57.22% at 50% 50%,
+    rgba(164, 243, 255, 0.15) 0%,
+    rgba(164, 243, 255, 0) 74.86%
+  );
 
   @media ${devices.tablet} {
     max-width: 300px;
@@ -177,12 +193,30 @@ const InvestorParagraph = styled.p`
   width: 298px;
   font-size: 16px;
   line-height: 21px;
-
   text-align: left;
-
   color: rgba(255, 255, 255, 0.7);
-
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+`;
+
+const CallToActionBtn = styled.button`
+  background: #a4f3ff;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  width: 200px;
+  border: none;
+  color: #152033;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 8px 0;
+  margin: 43px 0 80px;
+`;
+
+const LogoWrapper = styled.div`
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 83px;
 `;
 
 export default SponsorInvestor;
