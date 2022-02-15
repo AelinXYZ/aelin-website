@@ -84,7 +84,7 @@ const ContentContainer = styled.div`
   );
 
   @media ${devices.tablet} {
-    max-width: 300px;
+    max-width: 320px;
   }
 `;
 

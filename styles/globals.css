@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Agrandir-Regular", Helvetica Neue, sans-serif;
+  font-family: 'Agrandir-Regular', Helvetica Neue, sans-serif;
   background: #152033;
   color: white;
+  overflow-x: hidden;
 }
 
 a {
@@ -17,49 +18,49 @@ a {
 }
 
 @font-face {
-  font-family: "Agrandir-Regular";
+  font-family: 'Agrandir-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Agrandir-Regular.otf") format("opentype");
+  src: url('../public/fonts/Agrandir-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Agrandir-TextBold";
+  font-family: 'Agrandir-TextBold';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Agrandir-TextBold.otf") format("opentype");
+  src: url('../public/fonts/Agrandir-TextBold.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Sometimes-Regular";
+  font-family: 'Sometimes-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Sometimes-Times-Regular.otf") format("opentype");
+  src: url('../public/fonts/Sometimes-Times-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "ASM-Regular";
+  font-family: 'ASM-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/ASM-Regular.otf") format("opentype");
+  src: url('../public/fonts/ASM-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "SourceCodePro-Regular";
+  font-family: 'SourceCodePro-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/SourceCodePro-Regular.ttf") format("opentype");
+  src: url('../public/fonts/SourceCodePro-Regular.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: "Planetnv2-Regular";
+  font-family: 'Planetnv2-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Planetnv2.ttf") format("opentype");
+  src: url('../public/fonts/Planetnv2.ttf') format('opentype');
 }

@@ -5,7 +5,7 @@ import { devices } from '../breakpoints';
 interface ButtonProps {
   text: string;
   variant: 'outline' | 'primary' | 'text';
-  onClick?: () => {};
+  onClick?: () => void;
 }
 
 const CallToActionButton = ({ text, variant, onClick }: ButtonProps) => {

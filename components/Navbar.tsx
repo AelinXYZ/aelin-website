@@ -5,7 +5,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import CallToActionButton from './CallToActionButton';
 
 const Navbar = () => {
-  const matchesMd = useMediaQuery('(max-width: 768px)');
+  const matchesMd = useMediaQuery('(max-width: 620px)');
 
   if (matchesMd)
     return (

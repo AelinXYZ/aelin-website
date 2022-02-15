@@ -7,7 +7,7 @@ import { devices } from '../breakpoints';
 import CallToActionButton from './CallToActionButton';
 
 function Intro() {
-  const matchesMd = useMediaQuery('(max-width: 768px)');
+  const matchesMobile = useMediaQuery('(max-width: 620px)');
 
   return (
     <IntroSection>
@@ -19,15 +19,15 @@ function Intro() {
             <Image
               src='/svg/logo.svg'
               alt='Logo'
-              width={matchesMd ? 194 : 360}
-              height={matchesMd ? 98 : 181}
+              width={matchesMobile ? 194 : 360}
+              height={matchesMobile ? 98 : 181}
             />
           </LogoWrapper>
           <Image
             src='/svg/text-logo.svg'
             alt='Text logo'
-            width={matchesMd ? 194 : 358}
-            height={matchesMd ? 35 : 65}
+            width={matchesMobile ? 194 : 358}
+            height={matchesMobile ? 35 : 65}
           />
         </MainLogoContainer>
 
@@ -52,8 +52,8 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   z-index: 2;
 
-  @media ${devices.tablet} {
-    max-width: 300px;
+  @media ${devices.mobile} {
+    max-width: 320px;
   }
 `;
 
@@ -70,7 +70,8 @@ const LinesContainer = styled.div`
   height: 674px;
   background-image: url('/svg/white-lines.svg');
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
   z-index: 0;
   pointer-events: none;
 `;
@@ -104,7 +105,7 @@ const MainLogoContainer = styled.div`
   flex-direction: column;
   margin-bottom: 100px;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     margin-bottom: 145px;
   }
 `;
@@ -112,7 +113,7 @@ const MainLogoContainer = styled.div`
 const LogoWrapper = styled.div`
   margin-bottom: 40px;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     margin-top: 70px;
     margin-bottom: 20px;
   }
@@ -127,7 +128,7 @@ const H1 = styled.h1`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     font-family: 'Agrandir-TextBold';
     font-size: 18px;
     line-height: 23px;
@@ -142,7 +143,7 @@ const P = styled.p`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   height: 90px;
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     font-size: 16px;
     line-height: 21px;
     height: 84px;
