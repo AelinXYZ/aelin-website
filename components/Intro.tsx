@@ -16,6 +16,7 @@ function Intro() {
       <ContentContainer>
         <MainLogoContainer>
           <LogoWrapper>
+            <BlurBlob />
             <Image
               src='/svg/logo.svg'
               alt='Logo'
@@ -43,6 +44,10 @@ function Intro() {
   );
 }
 
+const IntroSection = styled.div`
+  width: 100%;
+`;
+
 const ContentContainer = styled.div`
   width: 100%;
   max-width: 880px;
@@ -55,11 +60,6 @@ const ContentContainer = styled.div`
   @media ${devices.mobile} {
     max-width: 320px;
   }
-`;
-
-const IntroSection = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 const LinesContainer = styled.div`
@@ -76,30 +76,6 @@ const LinesContainer = styled.div`
   pointer-events: none;
 `;
 
-const BackgroundGradient = styled.div`
-  position: absolute;
-  width: 1014px;
-  height: 880px;
-  left: 212px;
-  top: -17px;
-  background: radial-gradient(
-    43.47% 57.22% at 50% 50%,
-    #a4f3ff 0%,
-    #a4f3ff 74.86%
-  );
-`;
-
-const BackgroundBoxShadow = styled.div`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  left: 729px;
-  top: 275px;
-
-  background: #34364e;
-  box-shadow: 0px 0px 250px 180px #ffffff;
-`;
-
 const MainLogoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -111,12 +87,25 @@ const MainLogoContainer = styled.div`
 `;
 
 const LogoWrapper = styled.div`
+  position: relative;
   margin-bottom: 40px;
 
   @media ${devices.mobile} {
     margin-top: 70px;
     margin-bottom: 20px;
   }
+`;
+
+const BlurBlob = styled.div`
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  background-image: linear-gradient(90deg, #a4f3ff 0%, #a4f3ff 100%);
+  filter: blur(100px);
+  border-radius: 9999px;
+  opacity: 0.5;
 `;
 
 const H1 = styled.h1`
