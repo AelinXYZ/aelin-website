@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+import { devices } from '../breakpoints';
 
 const Footer = () => {
   return (
@@ -48,6 +49,9 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 83px;
+  @media ${devices.tablet} {
+    margin-bottom: 52px;
+  }
 `;
 
 const LogoSocialWrapper = styled.div`
