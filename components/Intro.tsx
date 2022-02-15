@@ -3,8 +3,12 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { devices } from '../breakpoints';
+import CallToActionButton from './CallToActionButton';
 
 function Intro() {
+  const matchesMobile = useMediaQuery('(max-width: 620px)');
+
   return (
     <IntroSection>
       <LinesContainer />
@@ -12,13 +16,19 @@ function Intro() {
       <ContentContainer>
         <MainLogoContainer>
           <LogoWrapper>
-            <Image src='/svg/logo.svg' alt='Logo' width={360} height={181} />
+            <BlurBlob />
+            <Image
+              src='/svg/logo.svg'
+              alt='Logo'
+              width={matchesMobile ? 194 : 360}
+              height={matchesMobile ? 98 : 181}
+            />
           </LogoWrapper>
           <Image
             src='/svg/text-logo.svg'
             alt='Text logo'
-            width={358}
-            height={65}
+            width={matchesMobile ? 194 : 358}
+            height={matchesMobile ? 35 : 65}
           />
         </MainLogoContainer>
 
@@ -28,11 +38,15 @@ function Intro() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
         </P>
-        <CallToActionBtn>Go to app</CallToActionBtn>
+        <CallToActionButton variant='primary' text='Go to app' />
       </ContentContainer>
     </IntroSection>
   );
 }
+
+const IntroSection = styled.div`
+  width: 100%;
+`;
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -42,11 +56,10 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
-`;
 
-const IntroSection = styled.div`
-  position: relative;
-  width: 100%;
+  @media ${devices.mobile} {
+    max-width: 320px;
+  }
 `;
 
 const LinesContainer = styled.div`
@@ -57,48 +70,46 @@ const LinesContainer = styled.div`
   height: 674px;
   background-image: url('/svg/white-lines.svg');
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
   z-index: 0;
   pointer-events: none;
-`;
-
-const BackgroundGradient = styled.div`
-  position: absolute;
-  width: 1014px;
-  height: 880px;
-  left: 212px;
-  top: -17px;
-  background: radial-gradient(
-    43.47% 57.22% at 50% 50%,
-    #a4f3ff 0%,
-    #a4f3ff 74.86%
-  );
-`;
-
-const BackgroundBoxShadow = styled.div`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  left: 729px;
-  top: 275px;
-
-  background: #34364e;
-  box-shadow: 0px 0px 250px 180px #ffffff;
 `;
 
 const MainLogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+
+  @media ${devices.mobile} {
+    margin-bottom: 145px;
+  }
 `;
 
 const LogoWrapper = styled.div`
+  position: relative;
   margin-bottom: 40px;
+
+  @media ${devices.mobile} {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+`;
+
+const BlurBlob = styled.div`
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  background-image: linear-gradient(90deg, #a4f3ff 0%, #a4f3ff 100%);
+  filter: blur(100px);
+  border-radius: 9999px;
+  opacity: 0.5;
 `;
 
 const H1 = styled.h1`
   font-family: 'Agrandir-TextBold';
-  font-style: normal;
   font-size: 24px;
   line-height: 31px;
   display: flex;
@@ -106,6 +117,12 @@ const H1 = styled.h1`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
+  @media ${devices.mobile} {
+    font-family: 'Agrandir-TextBold';
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 20px;
+  }
 `;
 const P = styled.p`
   font-style: normal;
@@ -115,22 +132,11 @@ const P = styled.p`
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   height: 90px;
-`;
-
-const CallToActionBtn = styled.button`
-  background: #a4f3ff;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  width: 200px;
-  border: none;
-  color: #152033;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  padding: 8px 0;
-  margin: 40px 0 180px 0;
+  @media ${devices.mobile} {
+    font-size: 16px;
+    line-height: 21px;
+    height: 84px;
+  }
 `;
 
 export default Intro;
