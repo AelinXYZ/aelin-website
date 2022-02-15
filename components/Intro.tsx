@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { devices } from '../breakpoints';
+import CallToActionButton from './CallToActionButton';
 
 function Intro() {
   const matchesMd = useMediaQuery('(max-width: 768px)');
@@ -36,7 +37,7 @@ function Intro() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
         </P>
-        <CallToActionBtn>Go to app</CallToActionBtn>
+        <CallToActionButton variant='primary' text='Go to app' />
       </ContentContainer>
     </IntroSection>
   );
@@ -145,29 +146,6 @@ const P = styled.p`
     font-size: 16px;
     line-height: 21px;
     height: 84px;
-  }
-`;
-
-const CallToActionBtn = styled.button`
-  background: #a4f3ff;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  width: 200px;
-  border: none;
-  color: #152033;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  padding: 8px 0;
-  margin: 40px 0 180px 0;
-  @media ${devices.tablet} {
-    width: 160px;
-    height: 40px;
-    font-size: 14px;
-    line-height: 18px;
-    margin: 40px 0 68px 0;
   }
 `;
 
