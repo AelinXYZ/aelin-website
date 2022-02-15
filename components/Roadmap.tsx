@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { roadmap } from '../data/roadmap';
 import { devices } from '../breakpoints';
 import useMediaQuery from '../hooks/useMediaQuery';
+import Circles from './Circles';
 
 const Roadmap = () => {
   const matchesMd = useMediaQuery('(max-width: 768px)');
@@ -31,32 +32,19 @@ const Roadmap = () => {
                   >
                     <Title>{month}</Title>
                     <BarWrapper>
-                      <Puce>
-                        <MainCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? '#a4f3ff'
-                                : '#FFF',
-                          }}
-                        />
-                        <MiddleCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? 'rgba(164, 243, 255, 0.4)'
-                                : 'rgba(255, 255, 255, 0.4)',
-                          }}
-                        />
-                        <BigCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? 'rgba(164, 243, 255, 0.2)'
-                                : 'rgba(255, 255, 255, 0.2)',
-                          }}
-                        />
-                      </Puce>
+                      <Circles
+                        color={
+                          isActive === 'active' || isActive === 'previous'
+                            ? 'blue'
+                            : 'white'
+                        }
+                        style={{
+                          position: 'relative',
+                          margin: '0',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      />
                       {index === 0 && (
                         <>
                           <Bar
@@ -76,32 +64,14 @@ const Roadmap = () => {
                   <>
                     <Title>{month}</Title>
                     <BarWrapper>
-                      <Puce>
-                        <MainCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? '#a4f3ff'
-                                : '#FFF',
-                          }}
-                        />
-                        <MiddleCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? 'rgba(164, 243, 255, 0.4)'
-                                : 'rgba(255, 255, 255, 0.4)',
-                          }}
-                        />
-                        <BigCircle
-                          style={{
-                            background:
-                              isActive === 'active' || isActive === 'previous'
-                                ? 'rgba(164, 243, 255, 0.2)'
-                                : 'rgba(255, 255, 255, 0.2)',
-                          }}
-                        />
-                      </Puce>
+                      <Circles
+                        color={
+                          isActive === 'active' || isActive === 'previous'
+                            ? 'blue'
+                            : 'white'
+                        }
+                        style={{ position: 'relative', margin: '12px 0px' }}
+                      />
                       {index === 0 && (
                         <>
                           <Bar
@@ -224,18 +194,6 @@ const BarWrapper = styled.div`
   }
 `;
 
-const Puce = styled.div`
-  position: relative;
-  width: 40px;
-  height: 40px;
-  margin: 12px 0px;
-  @media ${devices.tablet} {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
 const LongBar = styled.div`
   position: absolute;
   top: 50%;
@@ -272,42 +230,6 @@ const Bar = styled.div`
     width: 6px;
     height: 299px;
   }
-`;
-
-const MainCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 20px;
-  width: 20px;
-
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  z-index: 30;
-  border-radius: 50%;
-  @media ${devices.tablet} {
-  }
-`;
-const MiddleCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: 36px;
-
-  z-index: 20;
-  border-radius: 50%;
-`;
-const BigCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  z-index: 10;
-  border-radius: 50%;
 `;
 
 const Title = styled.span`
