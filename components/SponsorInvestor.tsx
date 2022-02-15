@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
 import { usersInfo } from '../data/usersInfo';
+import CallToActionButton from './CallToActionButton';
+import Circles from './Circles';
 
 const SponsorInvestor = () => {
   return (
@@ -17,11 +19,17 @@ const SponsorInvestor = () => {
           if (user === 'sponsor') {
             return (
               <InfoWrapper key={id} style={{ alignItems: 'start' }}>
-                <Puce>
-                  <MainCircle />
-                  <MiddleCircle />
-                  <BigCircle />
-                </Puce>
+                <Circles
+                  color='white'
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    left: 0,
+                    right: 0,
+                  }}
+                />
                 <SponsorTitle>{title}</SponsorTitle>
                 <SponsorParagraph>{text}</SponsorParagraph>
               </InfoWrapper>
@@ -29,18 +37,24 @@ const SponsorInvestor = () => {
           }
           return (
             <InfoWrapper key={id} style={{ alignItems: 'end' }}>
-              <Puce>
-                <MainCircle />
-                <MiddleCircle />
-                <BigCircle />
-              </Puce>
+              <Circles
+                color='white'
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  left: 0,
+                  right: 0,
+                }}
+              />
               <InvestorTitle>{title}</InvestorTitle>
               <InvestorParagraph>{text}</InvestorParagraph>
             </InfoWrapper>
           );
         })}
       </div>
-      <CallToActionBtn>Learn more</CallToActionBtn>
+      <CallToActionButton variant='primary' text='Learn more' />
       <LogoWrapper>
         <Image
           src='/svg/gray-text-logo.svg'
@@ -117,53 +131,6 @@ const InfoWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-const Puce = styled.div`
-  position: absolute;
-  top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-
-  width: 40px;
-  height: 40px;
-`;
-
-const MainCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 20px;
-  width: 20px;
-  background: #ffffff;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  z-index: 30;
-  border-radius: 50%;
-`;
-const MiddleCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.4);
-  z-index: 20;
-  border-radius: 50%;
-`;
-const BigCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 10;
-  border-radius: 50%;
-`;
-
 const SponsorTitle = styled.span`
   width: 298px;
 
@@ -201,22 +168,6 @@ const InvestorParagraph = styled.p`
   text-align: left;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-`;
-
-const CallToActionBtn = styled.button`
-  background: #a4f3ff;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  width: 200px;
-  border: none;
-  color: #152033;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  padding: 8px 0;
-  margin: 43px 0 80px;
 `;
 
 const LogoWrapper = styled.div`

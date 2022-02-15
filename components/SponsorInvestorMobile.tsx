@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
 import { usersInfo } from '../data/usersInfo';
+import Circles from './Circles';
 
 const SponsorInvestorMobile = () => {
   const [activeTab, setActiveTab] = useState<'sponsor' | 'investor'>('sponsor');
@@ -45,11 +46,7 @@ const SponsorInvestorMobile = () => {
           if (activeTab === user) {
             return (
               <InfoContainer key={id}>
-                <Puce>
-                  <MainCircle />
-                  <MiddleCircle />
-                  <BigCircle />
-                </Puce>
+                <Circles color='white' style={{ position: 'relative' }} />
                 <TextContainer>
                   <Title>{title}</Title>
                   <Text>{text}</Text>
@@ -139,47 +136,6 @@ const Text = styled.p`
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   margin: 12px 0;
-`;
-
-const Puce = styled.div`
-  position: relative;
-  width: 40px;
-  height: 40px;
-`;
-
-const MainCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 20px;
-  width: 20px;
-  background: #ffffff;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  z-index: 30;
-  border-radius: 50%;
-`;
-const MiddleCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.4);
-  z-index: 20;
-  border-radius: 50%;
-`;
-const BigCircle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 10;
-  border-radius: 50%;
 `;
 
 const Bar = styled.div`
