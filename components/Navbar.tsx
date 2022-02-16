@@ -22,9 +22,9 @@ const Navbar = () => {
     <Nav>
       <Image src='/svg/text-logo.svg' alt='Text logo' width={120} height={22} />
       <div>
-        <CallToActionButton variant='text' text='Buy Aelin' />
-        <CallToActionButton variant='text' text='Docs' />
-        <CallToActionButton variant='outline' text='Go to app' />
+        <CallToActionButton variant='tertiary' text='Buy Aelin' />
+        <CallToActionButton variant='tertiary' text='Docs' />
+        <CallToActionButton variant='secondary' text='Go to app' />
       </div>
     </Nav>
   );
