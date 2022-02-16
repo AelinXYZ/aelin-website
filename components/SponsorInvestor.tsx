@@ -5,20 +5,47 @@ import { devices } from '../breakpoints';
 import { usersInfo } from '../data/usersInfo';
 import CallToActionButton from './CallToActionButton';
 import Circles from './Circles';
+import Typography from './Typography';
 
 const SponsorInvestor = () => {
   return (
     <ContentContainer>
-      <Bar />
-      <TitleWrapper>
-        <Title style={{ textAlign: 'right' }}>SPONSOR</Title>
-        <Title style={{ textAlign: 'left' }}>INVESTOR</Title>
-      </TitleWrapper>
-      <div style={{ marginBottom: '63px' }}>
-        {usersInfo.map(({ title, text, id, user }) => {
-          if (user === 'sponsor') {
+      <Typography variant='title' style={{ marginBottom: '40px' }}>
+        HOW AELIN WORKS
+      </Typography>
+      <Typography variant='body' style={{ marginBottom: '60px' }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Typography>
+      <SponsInvestWrapper>
+        <Bar />
+        <TitleWrapper>
+          <Title style={{ textAlign: 'right' }}>SPONSOR</Title>
+          <Title style={{ textAlign: 'left' }}>INVESTOR</Title>
+        </TitleWrapper>
+        <div style={{ marginBottom: '63px' }}>
+          {usersInfo.map(({ title, text, id, user }) => {
+            if (user === 'sponsor') {
+              return (
+                <InfoWrapper key={id} style={{ alignItems: 'start' }}>
+                  <Circles
+                    color='white'
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      left: 0,
+                      right: 0,
+                    }}
+                  />
+                  <SponsorTitle>{title}</SponsorTitle>
+                  <SponsorParagraph>{text}</SponsorParagraph>
+                </InfoWrapper>
+              );
+            }
             return (
-              <InfoWrapper key={id} style={{ alignItems: 'start' }}>
+              <InfoWrapper key={id} style={{ alignItems: 'end' }}>
                 <Circles
                   color='white'
                   style={{
@@ -30,44 +57,40 @@ const SponsorInvestor = () => {
                     right: 0,
                   }}
                 />
-                <SponsorTitle>{title}</SponsorTitle>
-                <SponsorParagraph>{text}</SponsorParagraph>
+                <InvestorTitle>{title}</InvestorTitle>
+                <InvestorParagraph>{text}</InvestorParagraph>
               </InfoWrapper>
             );
-          }
-          return (
-            <InfoWrapper key={id} style={{ alignItems: 'end' }}>
-              <Circles
-                color='white'
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  left: 0,
-                  right: 0,
-                }}
-              />
-              <InvestorTitle>{title}</InvestorTitle>
-              <InvestorParagraph>{text}</InvestorParagraph>
-            </InfoWrapper>
-          );
-        })}
-      </div>
-      <CallToActionButton variant='primary' text='Learn more' />
-      <LogoWrapper>
-        <Image
-          src='/svg/gray-text-logo.svg'
-          alt='Logo'
-          width={358}
-          height={65}
-        />
-      </LogoWrapper>
+          })}
+        </div>
+        <CallToActionButton variant='primary' text='Learn more' />
+        <LogoWrapper>
+          <Image
+            src='/svg/gray-text-logo.svg'
+            alt='Logo'
+            width={358}
+            height={65}
+          />
+        </LogoWrapper>
+      </SponsInvestWrapper>
     </ContentContainer>
   );
 };
 
 const ContentContainer = styled.div`
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 2;
+  @media ${devices.tablet} {
+    max-width: 320px;
+  }
+`;
+
+const SponsInvestWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 880px;

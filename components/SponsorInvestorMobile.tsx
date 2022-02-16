@@ -3,12 +3,20 @@ import styled from 'styled-components';
 import { devices } from '../breakpoints';
 import { usersInfo } from '../data/usersInfo';
 import Circles from './Circles';
+import Typography from './Typography';
 
 const SponsorInvestorMobile = () => {
   const [activeTab, setActiveTab] = useState<'sponsor' | 'investor'>('sponsor');
 
   return (
     <ContentContainer>
+      <Typography variant='title' style={{ marginBottom: '40px' }}>
+        HOW AELIN WORKS
+      </Typography>
+      <Typography variant='body' style={{ marginBottom: '60px' }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Typography>
       <Tabs>
         <LeftTab
           onClick={() => setActiveTab('sponsor')}
@@ -64,12 +72,15 @@ const SponsorInvestorMobile = () => {
 const ContentContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   z-index: 2;
+  @media ${devices.mobile} {
+    max-width: 320px;
+  }
 `;
 
 const Tabs = styled.div`

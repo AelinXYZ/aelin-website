@@ -4,7 +4,7 @@ import { devices } from '../breakpoints';
 
 interface ButtonProps {
   text: string;
-  variant: 'outline' | 'primary' | 'text';
+  variant: 'primary' | 'secondary' | 'tertiary';
   onClick?: () => void;
 }
 
@@ -12,7 +12,7 @@ const CallToActionButton = ({ text, variant, onClick }: ButtonProps) => {
   if (variant === 'primary') {
     return <PrimaryButton onClick={onClick}>{text}</PrimaryButton>;
   }
-  if (variant === 'text') {
+  if (variant === 'tertiary') {
     return <TextButton onClick={onClick}>{text}</TextButton>;
   }
   return <OutlineButton onClick={onClick}>{text}</OutlineButton>;
