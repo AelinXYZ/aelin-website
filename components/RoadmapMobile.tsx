@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import { devices } from '../breakpoints';
 import { roadmap } from '../data/roadmap';
 import Circles from './Circles';
-
-interface RoadmapMobileProps {}
+import Typography from './Typography';
 
 const RoadmapMobile = () => {
   return (
     <ContentContainer>
-      <H2>THE AELIN ROADMAP</H2>
-      <P>
+      <Typography variant='title' style={{ marginBottom: '20px' }}>
+        ROADMAP
+      </Typography>
+      <Typography variant='body' style={{ marginBottom: '56px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
-      </P>
+      </Typography>
       <TimelineWrapper>
         <Bar />
         <LongBar />
@@ -66,40 +67,6 @@ const ContentContainer = styled.div`
   @media ${devices.mobile} {
     max-width: 320px;
     margin-bottom: 86px;
-  }
-`;
-
-const H2 = styled.h2`
-  font-family: 'Agrandir-TextBold';
-  font-size: 36px;
-  line-height: 47px;
-  text-align: center;
-  text-shadow: 0px 0px 6px rgba(80, 80, 80, 0.5);
-  margin-bottom: 10px;
-
-  @media ${devices.mobile} {
-    height: 100%;
-    font-size: 18px;
-    line-height: 23px;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-    margin-bottom: 20px;
-  }
-`;
-
-const P = styled.p`
-  width: 100%;
-  height: 90px;
-  font-size: 24px;
-  line-height: 31px;
-  text-align: center;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  margin-bottom: 40px;
-  @media ${devices.mobile} {
-    height: 100%;
-    width: 300px;
-    font-size: 16px;
-    line-height: 21px;
-    margin-bottom: 56px;
   }
 `;
 

@@ -4,16 +4,25 @@ import { roadmap } from '../data/roadmap';
 import { devices } from '../breakpoints';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Circles from './Circles';
+import Typography from './Typography';
 
 const Roadmap = () => {
   return (
     <div>
       <ContentContainer>
-        <H2>ROADMAP</H2>
-        <P>
+        <Typography
+          variant='title'
+          style={{ marginBottom: '10px', maxWidth: '880px' }}
+        >
+          ROADMAP
+        </Typography>
+        <Typography
+          variant='body'
+          style={{ marginBottom: '40px', maxWidth: '880px' }}
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </P>
+        </Typography>
         <TimelineWrapper>
           <Bar />
           <LongBar />
@@ -94,26 +103,6 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   z-index: 2;
   margin-bottom: 107px;
-`;
-
-const H2 = styled.h2`
-  font-family: 'Agrandir-TextBold';
-  height: 70px;
-  font-size: 36px;
-  line-height: 47px;
-  text-align: center;
-  text-shadow: 0px 0px 6px rgba(80, 80, 80, 0.5);
-  margin-bottom: 10px;
-`;
-
-const P = styled.p`
-  width: 840px;
-  height: 90px;
-  font-size: 24px;
-  line-height: 31px;
-  text-align: center;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  margin-bottom: 40px;
 `;
 
 const TimelineWrapper = styled.div`

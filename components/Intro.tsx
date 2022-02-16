@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { devices } from '../breakpoints';
 import CallToActionButton from './CallToActionButton';
+import Typography from './Typography';
 
 function Intro() {
   const matchesMobile = useMediaQuery('(max-width: 620px)');
@@ -31,13 +32,13 @@ function Intro() {
             height={matchesMobile ? 35 : 65}
           />
         </MainLogoContainer>
-
-        <H1>THE FIRST DECENTRALIZED FUNDRAISING PROTOCOL</H1>
-
-        <P>
+        <Typography variant='subtitle' style={{ marginBottom: '40px' }}>
+          THE FIRST DECENTRALIZED FUNDRAISING PROTOCOL
+        </Typography>
+        <Typography variant='body' style={{ marginBottom: '46px' }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
-        </P>
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </Typography>
         <CallToActionButton variant='primary' text='Go to app' />
       </ContentContainer>
     </IntroSection>
@@ -56,6 +57,10 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
+
+  @media ${devices.tablet} {
+    max-width: 600px;
+  }
 
   @media ${devices.mobile} {
     max-width: 320px;
@@ -106,37 +111,6 @@ const BlurBlob = styled.div`
   filter: blur(100px);
   border-radius: 9999px;
   opacity: 0.5;
-`;
-
-const H1 = styled.h1`
-  font-family: 'Agrandir-TextBold';
-  font-size: 24px;
-  line-height: 31px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-  margin-bottom: 40px;
-  @media ${devices.mobile} {
-    font-family: 'Agrandir-TextBold';
-    font-size: 18px;
-    line-height: 23px;
-    margin-bottom: 20px;
-  }
-`;
-const P = styled.p`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 31px;
-  text-align: center;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  height: 90px;
-  @media ${devices.mobile} {
-    font-size: 16px;
-    line-height: 21px;
-    height: 84px;
-  }
 `;
 
 export default Intro;
