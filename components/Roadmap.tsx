@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { roadmap } from '../data/roadmap';
-import { devices } from '../breakpoints';
-import useMediaQuery from '../hooks/useMediaQuery';
 import Circles from './Circles';
 import Typography from './Typography';
 
