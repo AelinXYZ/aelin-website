@@ -57,13 +57,18 @@ const RoadmapMobile = () => {
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 880px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   z-index: 2;
   margin-bottom: 107px;
+
+  @media ${devices.laptop} {
+    max-width: 600px;
+  }
+
   @media ${devices.mobile} {
     max-width: 320px;
     margin-bottom: 86px;
