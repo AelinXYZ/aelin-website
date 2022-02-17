@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { devices } from '../breakpoints';
 import Footer from '../components/Footer';
 import Intro from '../components/Intro';
 import Roadmap from '../components/Roadmap';
@@ -9,8 +10,8 @@ import SponsorInvestorMobile from '../components/SponsorInvestorMobile';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 const Home: NextPage = () => {
-  const matchesTablet = useMediaQuery('(max-width: 840px)');
-  const matchesLaptop = useMediaQuery('(max-width: 1100px)');
+  const matchesTablet = useMediaQuery(devices.tablet);
+  const matchesLaptop = useMediaQuery(devices.laptop);
 
   return (
     <div>
