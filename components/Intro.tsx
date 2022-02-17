@@ -8,7 +8,7 @@ import CallToActionButton from './CallToActionButton';
 import Typography from './Typography';
 
 function Intro() {
-  const matchesMobile = useMediaQuery('(max-width: 620px)');
+  const matchesMobile = useMediaQuery(devices.mobile);
 
   return (
     <IntroSection>

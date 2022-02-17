@@ -3,11 +3,12 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import useMediaQuery from '../hooks/useMediaQuery';
 import CallToActionButton from './CallToActionButton';
+import { devices } from '../breakpoints';
 
 const Navbar = () => {
-  const matchesMd = useMediaQuery('(max-width: 620px)');
+  const matchesMobile = useMediaQuery(devices.mobile);
 
-  if (matchesMd)
+  if (matchesMobile)
     return (
       <NavMobile>
         <Image
