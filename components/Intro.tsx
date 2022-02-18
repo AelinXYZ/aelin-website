@@ -92,7 +92,6 @@ const MainLogoContainer = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  position: relative;
   margin-bottom: 40px;
 
   @media ${devices.mobile} {
@@ -103,10 +102,12 @@ const LogoWrapper = styled.div`
 
 const BlurBlob = styled.div`
   width: 600px;
-  height: 600px;
+  height: 450px;
   position: absolute;
-  top: -200px;
+  top: 0;
   left: 0;
+  right: 0;
+  margin: auto;
   background-image: linear-gradient(90deg, #a4f3ff 0%, #a4f3ff 100%);
   filter: blur(100px);
   border-radius: 9999px;
