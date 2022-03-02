@@ -129,7 +129,7 @@ const TitleWrapper = styled.div`
 const Title = styled.div`
   width: 298px;
 
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
   color: #a4f3ff;
@@ -164,7 +164,7 @@ const InfoWrapper = styled.div`
 const SponsorTitle = styled.span`
   width: 298px;
 
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
   text-align: right;
@@ -184,7 +184,7 @@ const SponsorParagraph = styled.p`
 const InvestorTitle = styled.span`
   width: 298px;
 
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
 
