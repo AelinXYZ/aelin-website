@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
@@ -10,6 +9,7 @@ import Typography from './Typography';
 const SponsorInvestor = () => {
   return (
     <ContentContainer>
+      <Gradient />
       <Typography variant='title' style={{ marginBottom: '40px' }}>
         HOW AELIN WORKS
       </Typography>
@@ -75,6 +75,20 @@ const SponsorInvestor = () => {
   );
 };
 
+const Gradient = styled.div`
+  height: 900px;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: radial-gradient(
+    rgba(164, 243, 255, 0.15) 0%,
+    rgba(164, 243, 255, 0) 74.86%
+  );
+`;
 const ContentContainer = styled.div`
   width: 100%;
   max-width: 880px;
@@ -83,6 +97,7 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
+  position: relative;
   @media ${devices.tablet} {
     max-width: 320px;
   }
@@ -97,12 +112,6 @@ const SponsInvestWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
-  // this is a bit off
-  background: radial-gradient(
-    43.47% 57.22% at 50% 50%,
-    rgba(164, 243, 255, 0.15) 0%,
-    rgba(164, 243, 255, 0) 74.86%
-  );
 
   @media ${devices.tablet} {
     max-width: 320px;
