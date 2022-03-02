@@ -13,7 +13,6 @@ import Image from 'next/image';
 
 const Home: NextPage = () => {
   const matchesTablet = useMediaQuery(devices.tablet);
-  const matchesMobile = useMediaQuery(devices.mobile);
   const matchesLaptop = useMediaQuery(devices.laptop);
 
   return (
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
       <Intro />
 
       {matchesTablet ? <SponsorInvestorMobile /> : <SponsorInvestor />}
-      {!matchesMobile && (
+      {matchesLaptop ? null : (
         <LogoWrapper>
           <Image
             src='/png/shape-home_with-logo_no-halo.png'
@@ -48,7 +47,8 @@ const Home: NextPage = () => {
 };
 
 const PositionWrapper = styled.div`
-  margin-top: -550px;
+  position: relative;
+  top: -570px;
 `;
 const LogoWrapper = styled.div`
   width: 723px;
