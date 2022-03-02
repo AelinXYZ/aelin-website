@@ -11,10 +11,6 @@ const RoadmapMobile = () => {
       <Typography variant='title' style={{ marginBottom: '20px' }}>
         ROADMAP
       </Typography>
-      <Typography variant='body' style={{ marginBottom: '56px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </Typography>
       <TimelineWrapper>
         <Bar />
         <LongBar />
