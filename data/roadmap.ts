@@ -38,8 +38,8 @@ export const roadmap: RoadmapType = [
       title: 'V2',
       bullets: [
         'Brand new dAPP',
-        'Automated crosschain deal claiming',
         'Mobile friendly interface',
+        'Automated crosschain deal claiming',
       ],
     },
     id: 3,

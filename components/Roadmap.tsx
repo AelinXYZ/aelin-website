@@ -39,7 +39,10 @@ const Roadmap = () => {
                 >
                   <VersionTitle>{version.title}</VersionTitle>
                   {version.bullets.map((b, i) => (
-                    <VersionBullet key={i}>* {b}</VersionBullet>
+                    <div key={i} style={{ display: 'flex' }}>
+                      <div style={{ marginRight: '5px' }}>•</div>
+                      <VersionBullet>{b}</VersionBullet>
+                    </div>
                   ))}
                 </VersionWrapper>
               </ReleaseWrapper>
