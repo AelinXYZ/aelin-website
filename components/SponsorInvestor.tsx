@@ -14,8 +14,8 @@ const SponsorInvestor = () => {
         HOW AELIN WORKS
       </Typography>
       <Typography variant='body' style={{ marginBottom: '60px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        Aelin is a permissionless protocol. Anyone with an internet connection
+        may participate in the fundraising or deal sourcing process.
       </Typography>
       <SponsInvestWrapper>
         <Bar />
@@ -63,15 +63,13 @@ const SponsorInvestor = () => {
             );
           })}
         </div>
-        <CallToActionButton variant='primary' text='Learn more' />
-        <LogoWrapper>
-          <Image
-            src='/svg/gray-text-logo.svg'
-            alt='Logo'
-            width={358}
-            height={65}
-          />
-        </LogoWrapper>
+        <CallToActionButton
+          onClick={() => {
+            location.href = 'https://docs.aelin.xyz/';
+          }}
+          variant='primary'
+          text='Learn more'
+        />
       </SponsInvestWrapper>
     </ContentContainer>
   );
@@ -191,11 +189,6 @@ const InvestorParagraph = styled.p`
   text-align: left;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-`;
-
-const LogoWrapper = styled.div`
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 83px;
 `;
 
 export default SponsorInvestor;

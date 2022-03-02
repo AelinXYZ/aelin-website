@@ -2,44 +2,36 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import useMediaQuery from '../hooks/useMediaQuery';
 import { devices } from '../breakpoints';
 import CallToActionButton from './CallToActionButton';
 import Typography from './Typography';
 
 function Intro() {
-  const matchesMobile = useMediaQuery(devices.mobile);
-
   return (
     <IntroSection>
-      <LinesContainer />
       <Navbar />
+      <MainLogoContainer>
+        <Image
+          src='/png/shape-home_with-logo_with-halo.png'
+          alt='Logo'
+          layout='fill'
+        />
+      </MainLogoContainer>
       <ContentContainer>
-        <MainLogoContainer>
-          <LogoWrapper>
-            <BlurBlob />
-            <Image
-              src='/svg/logo.svg'
-              alt='Logo'
-              width={matchesMobile ? 194 : 360}
-              height={matchesMobile ? 98 : 181}
-            />
-          </LogoWrapper>
-          <Image
-            src='/svg/text-logo.svg'
-            alt='Text logo'
-            width={matchesMobile ? 194 : 358}
-            height={matchesMobile ? 35 : 65}
-          />
-        </MainLogoContainer>
         <Typography variant='subtitle' style={{ marginBottom: '40px' }}>
-          THE FIRST DECENTRALIZED FUNDRAISING PROTOCOL
+          A COMMUNITY FUNDRAISING PROTOCOL
         </Typography>
         <Typography variant='body' style={{ marginBottom: '46px' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          A permissionless multi-chain protocol for capital raises and OTC
+          deals. No need for VC's, Aelin decentralizes fundraising
         </Typography>
-        <CallToActionButton variant='primary' text='Go to app' />
+        <CallToActionButton
+          onClick={() => {
+            location.href = 'https://aelin.xyz/';
+          }}
+          variant='primary'
+          text='Go to app'
+        />
       </ContentContainer>
     </IntroSection>
   );
@@ -47,6 +39,7 @@ function Intro() {
 
 const IntroSection = styled.div`
   width: 100%;
+  height: 900px;
 `;
 
 const ContentContainer = styled.div`
@@ -57,7 +50,8 @@ const ContentContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   z-index: 2;
-
+  position: relative;
+  top: -315px;
   @media ${devices.tablet} {
     max-width: 600px;
   }
@@ -67,51 +61,12 @@ const ContentContainer = styled.div`
   }
 `;
 
-const LinesContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 674px;
-  background-image: url('/svg/white-lines.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-  z-index: 0;
-  pointer-events: none;
-`;
-
 const MainLogoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
-
-  @media ${devices.mobile} {
-    margin-bottom: 145px;
-  }
-`;
-
-const LogoWrapper = styled.div`
-  margin-bottom: 40px;
-
-  @media ${devices.mobile} {
-    margin-top: 70px;
-    margin-bottom: 20px;
-  }
-`;
-
-const BlurBlob = styled.div`
-  width: 600px;
-  height: 450px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  max-width: 610px;
+  height: 632px;
+  position: relative;
+  top: -116px;
   margin: auto;
-  background-image: linear-gradient(90deg, #a4f3ff 0%, #a4f3ff 100%);
-  filter: blur(100px);
-  border-radius: 9999px;
-  opacity: 0.5;
 `;
 
 export default Intro;
