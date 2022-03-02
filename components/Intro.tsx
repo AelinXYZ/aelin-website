@@ -12,7 +12,7 @@ function Intro() {
       <Navbar />
       <MainLogoContainer>
         <Image
-          src='/png/shape-home_with-logo_with-halo.png'
+          src='/png/Full_logo_with_halo_no_light.png'
           alt='Logo'
           width={610}
           height={632}
@@ -54,14 +54,13 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   z-index: 2;
   position: relative;
-  top: -315px;
+  top: -270px;
   @media ${devices.tablet} {
     max-width: 600px;
   }
 
   @media ${devices.mobile} {
     max-width: 320px;
-    top: -315px;
   }
   @media ${devices.smallMobile} {
     top: -215px;
