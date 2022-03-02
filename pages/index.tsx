@@ -47,8 +47,7 @@ const Home: NextPage = () => {
 };
 
 const PositionWrapper = styled.div`
-  position: relative;
-  top: -650px;
+  margin-top: -650px;
 `;
 const LogoWrapper = styled.div`
   width: 723px;
