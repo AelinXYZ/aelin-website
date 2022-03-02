@@ -13,11 +13,11 @@ export const roadmap: RoadmapType = [
     month: 'Sept 2021',
     isActive: 'previous',
     version: {
-      title: 'V.1',
+      title: 'ALPHA',
       bullets: [
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
+        'SNX ecosystem distribution',
+        'Council election',
+        'First Aelin pool',
       ],
     },
     id: 1,
@@ -26,12 +26,8 @@ export const roadmap: RoadmapType = [
     month: 'Feb 2022',
     isActive: 'active',
     version: {
-      title: 'V1.1',
-      bullets: [
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
-      ],
+      title: 'V1',
+      bullets: ['Updated homepage', 'Pool 1/Pool 2', 'UI/UX improvements'],
     },
     id: 2,
   },
@@ -41,9 +37,9 @@ export const roadmap: RoadmapType = [
     version: {
       title: 'V2',
       bullets: [
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
+        'Brand new dAPP',
+        'Automated crosschain deal claiming',
+        'Mobile friendly interface',
       ],
     },
     id: 3,
@@ -54,9 +50,9 @@ export const roadmap: RoadmapType = [
     version: {
       title: 'V3',
       bullets: [
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
-        'lorem ipsum dolor sit',
+        'Governance updates',
+        'New deal structure',
+        'More vesting schedules',
       ],
     },
     id: 4,
