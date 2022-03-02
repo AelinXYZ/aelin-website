@@ -14,7 +14,9 @@ function Intro() {
         <Image
           src='/png/shape-home_with-logo_with-halo.png'
           alt='Logo'
-          layout='fill'
+          width={610}
+          height={632}
+          layout='responsive'
         />
       </MainLogoContainer>
       <ContentContainer>
@@ -58,12 +60,16 @@ const ContentContainer = styled.div`
 
   @media ${devices.mobile} {
     max-width: 320px;
+    top: -315px;
+  }
+  @media ${devices.smallMobile} {
+    top: -215px;
   }
 `;
 
 const MainLogoContainer = styled.div`
   max-width: 610px;
-  height: 632px;
+  max-height: 632px;
   position: relative;
   top: -116px;
   margin: auto;
