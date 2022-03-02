@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Agrandir-Regular', Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
   background: #152033;
   color: white;
   overflow-x: hidden;
