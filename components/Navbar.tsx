@@ -23,9 +23,28 @@ const Navbar = () => {
     <Nav>
       <Image src='/svg/text-logo.svg' alt='Text logo' width={120} height={22} />
       <div>
-        <CallToActionButton variant='tertiary' text='Buy Aelin' />
-        <CallToActionButton variant='tertiary' text='Docs' />
-        <CallToActionButton variant='secondary' text='Go to app' />
+        <CallToActionButton
+          onClick={() => {
+            location.href =
+              'https://app.uniswap.org/#/swap?outputCurrency=0x61BAADcF22d2565B0F471b291C475db5555e0b76&inputCurrency=ETH&chain=optimism';
+          }}
+          variant='tertiary'
+          text='Buy Aelin'
+        />
+        <CallToActionButton
+          variant='tertiary'
+          text='Docs'
+          onClick={() => {
+            location.href = 'https://docs.aelin.xyz/';
+          }}
+        />
+        <CallToActionButton
+          variant='secondary'
+          text='Go to app'
+          onClick={() => {
+            location.href = 'https://aelin.xyz/';
+          }}
+        />
       </div>
     </Nav>
   );
