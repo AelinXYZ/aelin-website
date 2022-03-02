@@ -14,7 +14,7 @@ const Footer = () => {
           width={177}
         />
         <SocialWrapper>
-          <A>
+          <A href='https://twitter.com/aelinprotocol'>
             <Image
               src='/svg/twitter.svg'
               alt='Twitter Icon'
@@ -22,7 +22,7 @@ const Footer = () => {
               width={19}
             />
           </A>
-          <A>
+          <A href='http://discord.gg/YHffnV9sUM '>
             <Image
               src='/svg/discord.svg'
               alt='Discord Icon'
@@ -30,14 +30,8 @@ const Footer = () => {
               width={19}
             />
           </A>
-          <A>
-            <Image
-              src='/svg/social.svg'
-              // what logo is this?
-              alt='Icon'
-              height={16}
-              width={19}
-            />
+          <A href={'https://github.com/AelinXYZ'}>
+            <Image src='/svg/social.svg' alt='Icon' height={16} width={19} />
           </A>
         </SocialWrapper>
       </LogoSocialWrapper>
