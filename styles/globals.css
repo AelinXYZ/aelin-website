@@ -35,6 +35,14 @@ a {
 }
 
 @font-face {
+  font-family: 'Agrandir-Grand-Heavy-800';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../public/fonts/Agrandir-Grand-Heavy-800.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'Sometimes-Regular';
   font-style: normal;
   font-weight: 400;

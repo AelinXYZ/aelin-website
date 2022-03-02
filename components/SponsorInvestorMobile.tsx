@@ -141,7 +141,7 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.span`
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
   margin: 12px 0;

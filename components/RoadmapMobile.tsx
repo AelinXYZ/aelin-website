@@ -40,7 +40,10 @@ const RoadmapMobile = () => {
               >
                 <VersionTitle>{version.title}</VersionTitle>
                 {version.bullets.map((b, i) => (
-                  <VersionBullet key={i}>* {b}</VersionBullet>
+                  <div key={i} style={{ display: 'flex' }}>
+                    <div style={{ marginRight: '5px' }}>•</div>
+                    <VersionBullet>{b}</VersionBullet>
+                  </div>
                 ))}
               </VersionWrapper>
             </ReleaseWrapper>
@@ -138,7 +141,7 @@ const TitleCircleWrapper = styled.div`
 
 const Title = styled.span`
   height: 60px;
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 18px;
   line-height: 21px;
   text-align: center;
@@ -161,7 +164,7 @@ const VersionWrapper = styled.div`
 `;
 
 const VersionTitle = styled.div`
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
   color: #ffffff;
