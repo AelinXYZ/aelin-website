@@ -10,6 +10,7 @@ function Intro() {
   return (
     <IntroSection>
       <Navbar />
+      <Gradient />
       <MainLogoContainer>
         <Image
           src='/png/Full_logo_with_halo_no_light.png'
@@ -40,6 +41,20 @@ function Intro() {
   );
 }
 
+const Gradient = styled.div`
+  height: 900px;
+  position: absolute;
+  pointer-events: none;
+  top: -500px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: radial-gradient(
+    rgba(164, 243, 255, 0.15) 0%,
+    rgba(164, 243, 255, 0) 74.86%
+  );
+`;
 const IntroSection = styled.div`
   width: 100%;
   height: 900px;
