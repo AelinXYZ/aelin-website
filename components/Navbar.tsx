@@ -42,7 +42,7 @@ const Navbar = () => {
           variant='secondary'
           text='Go to app'
           onClick={() => {
-            location.href = 'https://aelin.xyz/';
+            location.href = 'https://app.aelin.xyz/';
           }}
         />
       </div>
