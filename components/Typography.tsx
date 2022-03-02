@@ -17,7 +17,7 @@ const Typography = ({ variant, children, style }: TypographyProps) => {
 };
 
 const Title = styled.div`
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 36px;
   line-height: 47px;
   text-align: center;
@@ -30,7 +30,7 @@ const Title = styled.div`
 `;
 
 const Subtitle = styled.div`
-  font-family: 'Agrandir-TextBold';
+  font-family: 'Agrandir-Grand-Heavy-800';
   font-size: 24px;
   line-height: 31px;
   text-align: center;
@@ -38,7 +38,7 @@ const Subtitle = styled.div`
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 
   @media ${devices.mobile} {
-    font-family: 'Agrandir-TextBold';
+    font-family: 'Agrandir-Grand-Heavy-800';
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 20px;
