@@ -9,9 +9,11 @@ import RoadmapMobile from '../components/RoadmapMobile';
 import SponsorInvestor from '../components/SponsorInvestor';
 import SponsorInvestorMobile from '../components/SponsorInvestorMobile';
 import useMediaQuery from '../hooks/useMediaQuery';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   const matchesTablet = useMediaQuery(devices.tablet);
+  const matchesMobile = useMediaQuery(devices.mobile);
   const matchesLaptop = useMediaQuery(devices.laptop);
 
   return (
@@ -20,25 +22,43 @@ const Home: NextPage = () => {
         <title>Aelin</title>
       </Head>
       <Intro />
+
       {matchesTablet ? <SponsorInvestorMobile /> : <SponsorInvestor />}
-      <LinesContainer />
-      {matchesLaptop ? <RoadmapMobile /> : <Roadmap />}
+      {!matchesMobile && (
+        <LogoWrapper>
+          <Image
+            src='/png/shape-home_with-logo_no-halo.png'
+            alt='Logo'
+            layout='fill'
+          />
+        </LogoWrapper>
+      )}
+
+      {matchesLaptop ? (
+        <RoadmapMobile />
+      ) : (
+        <PositionWrapper>
+          <Roadmap />
+        </PositionWrapper>
+      )}
+
       <Footer />
     </div>
   );
 };
 
-const LinesContainer = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 674px;
-  background-image: url('/svg/blue-lines.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-  z-index: 0;
-  pointer-events: none;
-  transform: translateY(-615px);
+const PositionWrapper = styled.div`
+  margin-top: -550px;
 `;
+const LogoWrapper = styled.div`
+  width: 723px;
+  height: 748px;
+  position: relative;
+  top: -350px;
+  pointer-events: none;
+  margin: auto;
+  // this shouldn't be needed if the logo is centered
+  transform: translateX(5%);
+`;
+
 export default Home;

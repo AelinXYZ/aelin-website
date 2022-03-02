@@ -14,8 +14,8 @@ const SponsorInvestorMobile = () => {
         HOW AELIN WORKS
       </Typography>
       <Typography variant='body' style={{ marginBottom: '60px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        Aelin is a permissionless protocol. Anyone with an internet connection
+        may participate in the fundraising or deal sourcing process.
       </Typography>
       <Tabs>
         <LeftTab
@@ -64,7 +64,13 @@ const SponsorInvestorMobile = () => {
           }
         })}
       </div>
-      <CallToActionBtn>Learn more</CallToActionBtn>
+      <CallToActionBtn
+        onClick={() => {
+          location.href = 'https://docs.aelin.xyz/';
+        }}
+      >
+        Learn more
+      </CallToActionBtn>
     </ContentContainer>
   );
 };
