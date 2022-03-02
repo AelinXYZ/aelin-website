@@ -10,17 +10,11 @@ const Roadmap = () => {
       <ContentContainer>
         <Typography
           variant='title'
-          style={{ marginBottom: '10px', maxWidth: '880px' }}
+          style={{ marginBottom: '100px', maxWidth: '880px' }}
         >
           ROADMAP
         </Typography>
-        <Typography
-          variant='body'
-          style={{ marginBottom: '40px', maxWidth: '880px' }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Typography>
+
         <TimelineWrapper>
           <Bar />
           <LongBar />
@@ -133,6 +127,7 @@ const VersionWrapper = styled.div`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   padding: 30px;
+  height: 215px;
 `;
 
 const VersionTitle = styled.div`
