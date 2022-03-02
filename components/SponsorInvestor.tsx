@@ -79,7 +79,7 @@ const Gradient = styled.div`
   height: 900px;
   position: absolute;
   pointer-events: none;
-  top: 0;
+  top: -200px;
   bottom: 0;
   left: 0;
   right: 0;
