@@ -172,6 +172,7 @@ const Bar = styled.div`
 `;
 
 const CallToActionBtn = styled.button`
+  display: block;
   background: #a4f3ff;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -181,7 +182,7 @@ const CallToActionBtn = styled.button`
   font-style: normal;
   font-weight: normal;
   padding: 8px 0;
-  margin: 40px 0 80px;
+  margin: 80px auto;
   width: 160px;
   height: 40px;
   font-size: 14px;
