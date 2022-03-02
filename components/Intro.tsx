@@ -58,6 +58,10 @@ const Gradient = styled.div`
 const IntroSection = styled.div`
   width: 100%;
   height: 900px;
+
+  @media ${devices.mobile} {
+    height: 650px;
+  }
 `;
 
 const ContentContainer = styled.div`
