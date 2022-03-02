@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       {matchesLaptop ? null : (
         <LogoWrapper>
           <Image
-            src='/png/shape-home_with-logo_no-halo.png'
+            src='/png/Half_logo_with_halo_no_light.png'
             alt='Logo'
             layout='fill'
           />
@@ -48,17 +48,15 @@ const Home: NextPage = () => {
 
 const PositionWrapper = styled.div`
   position: relative;
-  top: -570px;
+  top: -650px;
 `;
 const LogoWrapper = styled.div`
   width: 723px;
   height: 748px;
   position: relative;
-  top: -350px;
+  top: -400px;
   pointer-events: none;
   margin: auto;
-  // this shouldn't be needed if the logo is centered
-  transform: translateX(5%);
 `;
 
 export default Home;
