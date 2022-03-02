@@ -24,8 +24,9 @@ function Intro() {
           A COMMUNITY FUNDRAISING PROTOCOL
         </Typography>
         <Typography variant='body' style={{ marginBottom: '46px' }}>
-          A permissionless multi-chain protocol for capital raises and OTC
-          deals. No need for VC's, Aelin decentralizes fundraising
+          {
+            "A permissionless multi-chain protocol for capital raises and OTC deals. No need for VC's, Aelin decentralizes fundraising"
+          }
         </Typography>
         <CallToActionButton
           onClick={() => {
