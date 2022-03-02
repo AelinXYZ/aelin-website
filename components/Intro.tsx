@@ -31,7 +31,7 @@ function Intro() {
         </Typography>
         <CallToActionButton
           onClick={() => {
-            location.href = 'https://aelin.xyz/';
+            location.href = 'https://app.aelin.xyz/';
           }}
           variant='primary'
           text='Go to app'
