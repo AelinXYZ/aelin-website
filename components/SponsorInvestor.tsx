@@ -148,7 +148,7 @@ const InfoWrapper = styled.div`
   height: 150px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: start;
   margin-bottom: 20px;
 `;
 
