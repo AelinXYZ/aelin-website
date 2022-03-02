@@ -19,6 +19,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Aelin</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <Intro />
 
