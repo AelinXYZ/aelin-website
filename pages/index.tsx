@@ -11,38 +11,47 @@ import SponsorInvestorMobile from '../components/SponsorInvestorMobile';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Image from 'next/image';
 
+const SafeHydrate: React.FC = ({ children }) => {
+  return (
+    <div suppressHydrationWarning>
+      {typeof window === 'undefined' ? null : children}
+    </div>
+  );
+};
 const Home: NextPage = () => {
   const matchesTablet = useMediaQuery(devices.tablet);
   const matchesLaptop = useMediaQuery(devices.laptop);
 
   return (
-    <div>
-      <Head>
-        <title>Aelin</title>
-      </Head>
-      <Intro />
+    <SafeHydrate>
+      <div>
+        <Head>
+          <title>Aelin</title>
+        </Head>
+        <Intro />
 
-      {matchesTablet ? <SponsorInvestorMobile /> : <SponsorInvestor />}
-      {matchesLaptop ? null : (
-        <LogoWrapper>
-          <Image
-            src='/png/Half_logo_with_halo_no_light.png'
-            alt='Logo'
-            layout='fill'
-          />
-        </LogoWrapper>
-      )}
+        {matchesTablet ? <SponsorInvestorMobile /> : <SponsorInvestor />}
+        {matchesLaptop ? null : (
+          <LogoWrapper>
+            <Image
+              src='/png/Half_logo_with_halo_no_light.png'
+              alt='Logo'
+              layout='fill'
+            />
+          </LogoWrapper>
+        )}
 
-      {matchesLaptop ? (
-        <RoadmapMobile />
-      ) : (
-        <PositionWrapper>
-          <Roadmap />
-        </PositionWrapper>
-      )}
+        {matchesLaptop ? (
+          <RoadmapMobile />
+        ) : (
+          <PositionWrapper>
+            <Roadmap />
+          </PositionWrapper>
+        )}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </SafeHydrate>
   );
 };
 
