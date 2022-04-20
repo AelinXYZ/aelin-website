@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, useEffect } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
@@ -10,6 +10,8 @@ import SponsorInvestor from '../components/SponsorInvestor';
 import SponsorInvestorMobile from '../components/SponsorInvestorMobile';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Image from 'next/image';
+import { init } from '@socialgouv/matomo-next';
+import { useEffect } from 'react';
 
 const SafeHydrate: React.FC = ({ children }) => {
   return (
@@ -21,6 +23,13 @@ const SafeHydrate: React.FC = ({ children }) => {
 const Home: NextPage = () => {
   const matchesTablet = useMediaQuery(devices.tablet);
   const matchesLaptop = useMediaQuery(devices.laptop);
+
+  useEffect(() => {
+    init({
+      url: process.env.NEXT_PUBLIC_MATOMO_URL,
+      siteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
+    });
+  }, []);
 
   return (
     <SafeHydrate>
