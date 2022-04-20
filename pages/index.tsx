@@ -1,4 +1,3 @@
-import type { NextPage, useEffect } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { devices } from '../breakpoints';
@@ -20,14 +19,14 @@ const SafeHydrate: React.FC = ({ children }) => {
     </div>
   );
 };
-const Home: NextPage = () => {
+const Home = () => {
   const matchesTablet = useMediaQuery(devices.tablet);
   const matchesLaptop = useMediaQuery(devices.laptop);
 
   useEffect(() => {
     init({
-      url: process.env.NEXT_PUBLIC_MATOMO_URL,
-      siteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
+      url: process.env.NEXT_PUBLIC_MATOMO_URL || '',
+      siteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID || '',
     });
   }, []);
 
